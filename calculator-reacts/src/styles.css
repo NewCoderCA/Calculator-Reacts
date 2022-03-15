@@ -43,11 +43,11 @@ body {
 
 .calculator-grid > button {
  cursor: pointer;
- font-size: 2rem;
+ font-size: 1.90rem;
  border: 1px solid white;
  outline: none;
  background-color: rgba(240, 236, 236, 0.70);
- border: 1px solid rgb(5, 62, 248);
+ border: 1px solid rgb(133, 160, 248);
  border-radius: 5px;
 }
 
@@ -69,17 +69,17 @@ body {
   padding: .75rem;
   word-wrap: break-word;
   word-break: break-all;
-  border: 1px solid rgb(5, 62, 248);
+  border: 1px solid rgb(133, 160, 248);
   border-radius: 5px;
 }
 
 .output, .previous-sum {
   color: rgba(240, 236, 236, 0.70);
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .output, .current-sum {
   color: white;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
