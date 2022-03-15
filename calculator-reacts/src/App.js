@@ -1,22 +1,14 @@
 import logo from './logo.jpeg';
+import image from './flagAfrica.png';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <nav><img src={image} className="flagAfrica" alt="African continent containing African flags" /></nav>
+        <img src={logo} className="App-logo" alt="Calculator logo" />
+      <h1>Quick Maths!</h1>
       </header>
     </div>
   );
