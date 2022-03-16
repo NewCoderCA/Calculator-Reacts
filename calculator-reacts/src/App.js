@@ -18,6 +18,13 @@ export const ACTIONS = {
 function reducer(state, { type, payload }) {
   switch(type) {
     case ACTIONS.ADD_DIGIT:
+      if(state.overwrite) { 
+        return {
+          ...state,
+          currentSum: payload.digit,
+          overwrite: false,
+        }
+      }
       if(payload.digit === '0' && state.currentSum === '0') return state;
       if(payload.digit === '.' && state.currentSum.includes('.')){
         return state;
@@ -44,6 +51,18 @@ function reducer(state, { type, payload }) {
       }
     case ACTIONS.CLEAR: 
       return {};
+    case ACTIONS.EVALUATE:
+      if (state.operation == null || state.currentSum == null || state.previousSum == null) {
+        return state;
+      }
+    
+      return {
+        ...state,
+        operation: null,
+        previousSum: null,
+        overwrite: true,
+        currentSum:evaluate(state)
+      }
   };
 }
 
@@ -102,7 +121,7 @@ function App() {
       <OperationButton operation='-' dispatch={dispatch} />
       <DigitButton digit='.' dispatch={dispatch} />
       <DigitButton digit='0' dispatch={dispatch} />
-      <button className='span-two'>=</button>
+      <button className='span-two' onClick={() => dispatch ({ type: ACTIONS.EVALUATE })}>=</button>
     </div>
 
 </div>  
