@@ -51,6 +51,26 @@ function reducer(state, { type, payload }) {
       }
     case ACTIONS.CLEAR: 
       return {};
+    case ACTIONS.DELETE_DIGIT:
+      if(state.overwrite) {
+        return {
+          ...state,
+          overwrite: false,
+          currentSum: null
+        }
+      }
+      if(state.currentSum == null) return state;
+      if(state.currentSum.length == 1) 
+        return { 
+        ...state, 
+        currentSum: null 
+      }
+      return {
+        ...state,
+        currentSum: state.currentSum.slice(0, -1)
+      }
+
+      return {};
     case ACTIONS.EVALUATE:
       if (state.operation == null || state.currentSum == null || state.previousSum == null) {
         return state;
@@ -105,7 +125,7 @@ function App() {
     </div>
    
       <button className='span-two' onClick={() => dispatch({ type: ACTIONS.CLEAR })}>Clear</button>
-      <button>Delete </button>
+      <button onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>Delete </button>
       <OperationButton operation='÷' dispatch={dispatch} />
       <DigitButton digit='1' dispatch={dispatch} />
       <DigitButton digit='2' dispatch={dispatch} />
