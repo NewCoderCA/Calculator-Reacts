@@ -69,13 +69,11 @@ function reducer(state, { type, payload }) {
         ...state,
         currentSum: state.currentSum.slice(0, -1)
       }
-
       return {};
     case ACTIONS.EVALUATE:
       if (state.operation == null || state.currentSum == null || state.previousSum == null) {
         return state;
       }
-    
       return {
         ...state,
         operation: null,
@@ -106,6 +104,19 @@ function evaluate({ currentSum, previousSum, operation }) {
 return computation.toString();
 }
 
+const INTEGER_FORMAT = new Intl.NumberFormat('en-us', {
+  maximumFractionDigits: 0,
+})
+function formatNumbers(number){
+  if(number == null) 
+  return
+  const [integer, decimal] = number.split('.')
+  if (decimal == null)
+  return INTEGER_FORMAT.format(integer)
+  return `${INTEGER_FORMAT.format(integer)}.${decimal}`
+
+}
+
 
 function App() {
   const [{ currentSum, previousSum, operation }, dispatch] = useReducer(reducer, {});
@@ -120,8 +131,8 @@ function App() {
 
     <div className='calculator-grid'>
       <div className='output'>
-      <div className='previous-sum'>{previousSum} {operation}</div>
-      <div className='current-sum'>{currentSum}</div>
+      <div className='previous-sum'>{formatNumbers(previousSum)} {operation}</div>
+      <div className='current-sum'>{formatNumbers(currentSum)}</div>
     </div>
    
       <button className='span-two' onClick={() => dispatch({ type: ACTIONS.CLEAR })}>Clear</button>
