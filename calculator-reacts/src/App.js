@@ -125,8 +125,8 @@ function App() {
     <div className='App'>
       <header className='App-header'>
        <nav className='App-nav'><img src={image} className='flagAfrica' alt='African continent containing African flags' />
-        <img src={logo} className='App-logo' alt='Calculator logo' /></nav>
         <h1>Quick Maths!</h1>
+        <img src={logo} className='App-logo' alt='Calculator logo' /></nav>
       </header>
 
     <div className='calculator-grid'>
@@ -154,7 +154,6 @@ function App() {
       <DigitButton digit='0' dispatch={dispatch} />
       <button className='span-two' onClick={() => dispatch ({ type: ACTIONS.EVALUATE })}>=</button>
     </div>
-
 </div>  
   );
 }
