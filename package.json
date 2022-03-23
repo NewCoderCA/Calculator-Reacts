@@ -15,7 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress": "react-scripts -r @cypress/instrument-cra start"
   },
   "eslintConfig": {
     "extends": [
@@ -36,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "@cypress/instrument-cra": "^1.4.0",
     "cypress": "^9.5.2"
   }
 }
