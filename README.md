@@ -1,16 +1,33 @@
-# React Calculator project  :heavy_multiplication_x: :heavy_plus_sign: :heavy_minus_sign: :heavy_division_sign:
+# React Calculator project :heavy_multiplication_x: :heavy_plus_sign: :heavy_minus_sign: :heavy_division_sign:
 
 - Making a calculator app so anyone can use for quick Maths! :smiley:
 
 ## Installation and dependancies :computer: :paperclips: :rocket:
+
 - `npm init -y` install or check version of `node -v`
 - `npm install` and `npx create-react-app [app-name]` install React dependancies.
 - `cd [app name]` go inside new project.
 - `npm start` start creating quick Maths in development mode. :running_woman:
 - Open `http://localhost:3000` to view it in your browser.
-- Push first `commit -m "first commit"` to GitHub `git branch -M main`, `git remote add origin https://github.com/.....` and then `git push -u origin main` 
+- Push first `commit -m "first commit"` to GitHub `git branch -M main`, `git remote add origin https://github.com/.....` and then `git push -u origin main`
 
-### Getting Started with Create React App
+## Cypress E2E Testing :white_check_mark:
+
+- `cd /into/your/projectpath` and `ls` to list where you are.
+- `npm install cypress --save-dev` Install Cypress locally as a dev dependancy for your project.
+- `./node_modules/.bin/cypress open` Cypress will open in browser.
+- Run `example` test to check it works.
+- Create your test files in `cypress/integration` folder.
+
+## Deploy app using Heroku :rocket: :earth_africa:
+
+- Sign up or login in `https://www.heroku.com`
+- New, Create new app, Connect to GitHub as deployment method.
+- Connect to GitHub and search for GitHub app, then connect.
+- Set automatic or manual deployment and then deploy branch.
+- Ensure `Procfile` is created in root folder and include `web:node [name of server file].js`
+
+#### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
