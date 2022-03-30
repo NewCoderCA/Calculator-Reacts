@@ -18,6 +18,8 @@
 - `./node_modules/.bin/cypress open` Cypress will open in browser.
 - Run `example` test to check it works.
 - Create your test files in `cypress/integration` folder.
+- Update package.json with Cypress:open command
+- Ensure local host is running :running_man: then run cypress testing in browser.
 
 ## Deploy app using Heroku :rocket: :earth_africa:
 
